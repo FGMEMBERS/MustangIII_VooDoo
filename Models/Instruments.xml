@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+
+
+
+<PropertyList>
+
+ 	
+
+ <!-- Front hotspots -->
+ <panel>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-panel-hotspots.xml</path>
+  <bottom-left>
+   <x-m>3.630</x-m>
+   <y-m>-0.30</y-m>
+   <z-m>-0.30</z-m>
+  </bottom-left>
+  <bottom-right>
+   <x-m>3.630</x-m>
+   <y-m> 0.30</y-m>
+   <z-m>-0.30</z-m>
+  </bottom-right>
+  <top-left>
+   <x-m>3.630</x-m>
+   <y-m>-0.30</y-m>
+   <z-m> 0.62</z-m>
+  </top-left>
+ </panel>
+
+ <!-- panel Models/Instruments -->
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-alt.xml</path>
+  <offsets>
+   <x-m>3.627</x-m>
+   <y-m>-0.163</y-m>
+   <z-m>.12</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-compass.xml</path>
+  <offsets>
+   <x-m>3.62</x-m>
+   <y-m>-0.064</y-m>
+   <z-m>0.133</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-attitude.xml</path>
+  <offsets>
+   <x-m>3.6299</x-m>
+   <y-m>0.045</y-m>
+   <z-m>0.015</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-carbtemp.xml</path>
+  <offsets>
+   <x-m>3.625</x-m>
+   <y-m>0.115</y-m>
+   <z-m>0.23</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-cooltemp.xml</path>
+  <offsets>
+   <x-m>3.625</x-m>
+   <y-m>-0.158</y-m>
+   <z-m>0.235</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-asi.xml</path>
+  <offsets>
+    <x-m>3.628</x-m>
+   <y-m>0.034</y-m>
+   <z-m>0.125</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-tach.xml</path>
+  <offsets>
+   <x-m>3.631</x-m>
+   <y-m>0.14</y-m>
+   <z-m>0.02</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-engine.xml</path>
+  <offsets>
+   <x-m>3.627</x-m>
+   <y-m>-0.33</y-m>
+   <z-m>-0.11</z-m>
+  </offsets>
+ </model>
+<!--
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-acc.xml</path>
+  <offsets>
+   <x-m>3.630</x-m>
+   <y-m>0.027</y-m>
+   <z-m>-0.08</z-m>
+  </offsets>
+ </model>
+-->
+
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-vsi.xml</path>
+  <offsets>
+   <x-m>3.629</x-m>
+   <y-m>-0.061</y-m>
+   <z-m>0.036</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-turn.xml</path>
+  <offsets>
+   <x-m>3.629</x-m>
+   <y-m>-0.17</y-m>
+   <z-m>0.021</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-remote.xml</path>
+  <offsets>
+   <x-m>3.626</x-m>
+   <y-m>0.1342</y-m>
+   <z-m>0.13</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-vac.xml</path>
+  <offsets>
+   <x-m>3.610</x-m>
+   <y-m>0.25</y-m>
+   <z-m>0.2</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-clock.xml</path>
+  <offsets>
+     <x-m>3.616</x-m>
+   <y-m>0.285</y-m>
+   <z-m>0.06</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-man.xml</path>
+  <offsets>
+    <x-m>3.618</x-m>
+   <y-m>0.285</y-m>
+   <z-m>-0.041</z-m>
+  </offsets>
+ </model>
+<!--
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-magcompass.xml</path>
+  <offsets>
+   <x-m>3.725</x-m>
+   <y-m>0.15</y-m>
+   <z-m>0.23</z-m>
+  </offsets>
+ </model>
+-->
+
+ <model>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-gearwarn.xml</path>
+  <offsets>
+  <x-m>3.6305</x-m>
+   <y-m>-0.17</y-m>
+   <z-m>-0.05</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>IGNITION</name>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-ignition.xml</path>
+  <offsets>
+   <x-m>3.71</x-m>
+   <y-m>-0.099</y-m>
+   <z-m>-0.339</z-m>
+   <pitch-deg>-32</pitch-deg>
+  </offsets>
+ </model>
+
+ <!-- non-panel Models/Instruments -->
+
+ <model>
+  <name>TRIMKNOBAILERON</name>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-trimknobaileron.xml</path>
+  <offsets>
+   <x-m>3.955</x-m>
+   <y-m>-0.34</y-m>
+   <z-m>-0.213</z-m>
+   <pitch-deg>15.0</pitch-deg>
+  </offsets>
+ </model>
+
+ <model>
+  <name>TRIMKNOBRUDDER</name>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-trimknobrudder.xml</path>
+  <offsets>
+   <x-m>4.085</x-m>
+   <y-m>-0.34</y-m>
+   <z-m>-0.233</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>TRIMWHEELELEVATOR</name>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-trimwheelelevator.xml</path>
+  <offsets>
+   <x-m>3.995</x-m>
+   <y-m>-0.30</y-m>
+   <z-m>-0.347</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>THROTTLE</name>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-throttle.xml</path>
+  <offsets>
+   <x-m>3.895</x-m>
+   <y-m>-0.32</y-m>
+   <z-m>-0.06</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>GUNSIGHT</name>
+  <path>Aircraft/MustangIII_VooDoo/Models/Instruments/MustangIII_VooDoo-gunsight.ac</path>
+  <offsets>
+   <x-m>3.8</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.32</z-m>
+  </offsets>
+ </model>
+
+ 
+</PropertyList>

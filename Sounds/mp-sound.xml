@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList> 
+
+  <fx> 
+
+    <crank> 
+      <name>engstart</name>
+      <path>Aircraft/MustangIII_VooDoo/Sounds/merlin-start.wav</path>
+      <property>engines/engine/cranking</property>
+      <volume> 
+        <property>orientation/alpha-deg</property>
+        <type>log</type>
+        <min>0.5</min>
+        <max>1.0</max>
+      </volume>
+      <volume> 
+        <factor>1.2</factor>
+        <max>1.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </crank>
+
+    <engine> 
+      <name>engine idle rpm</name>
+      <mode>looped</mode>
+      <path>Aircraft/MustangIII_VooDoo/Sounds/merlin-idle.wav</path>
+      <condition> 
+        <property>engines/engine/running</property>
+       <less-than> 
+          <property>engines/engine/rpm</property>
+          <value>1500</value>
+        </less-than>
+        <greater-than> 
+          <property>engines/engine/rpm</property>
+          <value>10</value>
+        </greater-than>
+      </condition>
+      <volume> 
+        <property>orientation/alpha-deg</property>
+        <type>log</type>
+        <min>1.0</min>
+        <max>1.5</max>
+      </volume>
+      <volume> 
+        <property>sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.4</factor>
+      </volume>
+      <pitch> 
+        <property>engines/engine/rpm</property>
+        <factor>0.0009496</factor>
+        <min>0.6</min>
+        <max>2.0</max>
+        <offset>0</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine>
+
+    <engine-4> 
+      <name>engine high rpm</name>
+      <mode>looped</mode>
+      <path>Aircraft/MustangIII_VooDoo/Sounds/merlin-rpm2.wav</path>
+      <condition> 
+        <property>engines/engine/running</property>
+        <greater-than-equals> 
+          <property>engines/engine/rpm</property>
+          <value>1499</value>
+        </greater-than-equals>
+      </condition>
+      <volume> 
+       <property>orientation/alpha-deg</property>
+        <type>log</type>
+        <min>1.0</min>
+        <max>1.5</max>
+      </volume>
+      <volume> 
+        <property>sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.4</factor>
+      </volume>
+      <pitch> 
+        <property>engines/engine/rpm</property>
+        <factor>0.000462</factor>
+        <min>0.3</min>
+        <max>2.0</max>
+        <offset>0</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-4>
+
+    <engine-0> 
+      <name>engine shut down rpm</name>
+      <path>Aircraft/MustangIII_VooDoo/Sounds/merlin-shutdown.wav</path>
+      <condition> 
+        <property>engines/engine/running</property>
+        <not> 
+          <property>controls/engines/engine/cutoff</property>
+        </not>
+        <less-than-equals> 
+          <property>engines/engine/rpm</property>
+          <value>150</value>
+        </less-than-equals>
+      </condition>
+      <volume> 
+        <property>orientation/alpha-deg</property>
+        <type>log</type>
+        <min>1.0</min>
+        <max>1.5</max>
+      </volume>
+      <volume> 
+        <property>sim/current-view/internal</property>
+        <offset>1.0</offset>
+        <factor>-0.4</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </engine-0>
+
+  
+  
+    <squeal> 
+      <name>squeal</name>
+      <path>Sounds/squeal.wav</path>
+      <condition> 
+        <or> 
+          <property>gear/gear[0]/wow</property>
+          <property>gear/gear[1]/wow</property>
+          <property>gear/gear[2]/wow</property>
+        </or>
+      </condition>
+      <volume> 
+        <property>velocities/speed-down-fps</property>
+        <factor>0.5</factor>
+        <max>1.0</max>
+      </volume>
+      <volume> 
+        <property>velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+        <max>1.0</max>
+      </volume>
+      <volume> 
+        <internal>dt_stop</internal>
+        <factor>0.05</factor>
+        <max>1.0</max>
+      </volume>
+      <pitch> 
+        <property>velocities/airspeed-kt</property>
+        <factor>0.0025</factor>
+        <offset>1.2</offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </squeal>
+
+   
+
+    <guns> 
+      <name>gunfire</name>
+      <mode>looped</mode>
+      <path>Aircraft/MustangIII_VooDoo/Sounds/gunfire.wav</path>
+      <condition> 
+        <property>controls/armament/trigger</property>
+        <property>ai/submodels/submodel/count</property>
+      </condition>
+      <volume> 
+        <factor>1.2</factor>
+        <max>1.0</max>
+      </volume>
+    </guns>
+
+    <click> 
+      <name>nav lights click down</name>
+      <path>Sounds/click.wav</path>
+      <condition> 
+        <property>controls/lighting/nav-lights</property>
+      </condition>
+      <volume> 
+        <factor>1.0</factor>
+        <min>0.1</min>
+        <max>0.9</max>
+      </volume>
+    </click>
+
+	
+<low-fuel>
+  <name>low-fuel</name>
+  <mode>looped</mode>
+  <path>Aircraft/MustangIII_VooDoo/Sounds/splutter.wav</path>
+  <condition>
+    <less-than>
+     <property>consumables/fuel/total-fuel-gals</property>
+    <value>2.0</value>
+    </less-than>
+	<greater-than>
+     <property>consumables/fuel/total-fuel-gals</property>
+    <value>0.1</value>
+    </greater-than>
+	
+  </condition>
+</low-fuel>
+
+	<no-fuel>
+  <name>no-fuel</name>
+  
+  <path>Aircraft/MustangIII_VooDoo/Sounds/merlin-shutdown.wav</path>
+  <condition>
+    <less-than>
+     <property>consumables/fuel/total-fuel-gals</property>
+    <value>0.1</value>
+    </less-than>
+	
+  </condition>
+</no-fuel>	
+
+  </fx>
+
+</PropertyList>

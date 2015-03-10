@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>MustangIII_VooDoo-gearwarn.ac</path>
+
+ <animation>
+  <type>select</type>
+  <object-name>LeftBulb</object-name>
+  <condition> 
+  <and>
+    <less-than>
+      <property>/controls/engines/engine[0]/throttle</property>
+      <value>0.20</value>
+    </less-than>
+    <not>
+      <property>/controls/gear/gear-down[0]</property>
+    </not>
+  </and>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>RightBulb</object-name>
+  <condition> 
+    <greater-than>
+      <property>/controls/gear/brake-parking</property>
+      <value>0.99</value>
+    </greater-than>
+  </condition>
+ </animation>
+
+</PropertyList>
+
+

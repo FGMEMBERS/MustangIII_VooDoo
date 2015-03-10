@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>MustangIII_VooDoo-throttle.ac</path>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Throttle</object-name>
+  <property>/controls/engines/engine[0]/throttle</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>100</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>ThrottleLinkage</object-name>
+  <property>/controls/engines/engine[0]/throttle</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>100</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>ThrottleLinkage</object-name>
+  <property>/controls/engines/engine[0]/throttle</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>0.5</ind>
+    <dep>30</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>70</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>0.10</x-m>
+   <y-m>0.01</y-m>
+   <z-m>0.08</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Prop</object-name>
+  <property>/controls/engines/engine[0]/propeller-pitch</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>-100</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>0</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Mixture</object-name>
+  <property>/controls/engines/engine[0]/mixture</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>30</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+</PropertyList>
+
+

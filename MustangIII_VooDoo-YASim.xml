@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+
+<!--
+************************************************************************
+YASim aerodynamic model for a P-51C MustangIII
+Started 2003-04-24 by Jim Wilson
+
+This aerodynamic model is based on three-views, unauthoritative
+performance data, and wild guesses.  These sites provided particularly
+useful information or were simply fun to visit:
+
+Performance data:
+http://www.hq.nasa.gov/office/pao/History/SP-468/app-a2.htm
+http://www.olympicflightmuseum.com/aircraft_gallery/p51d_mustang.htm
+http://www.btinternet.com/~lee_mail/P51.html
+http://www.sprucegoose.org/pdfs/planes/P51Mustang.pdf
+
+Weight and balance:
+http://www.p51.wjackparker.com/P51_Additional_reference_material/x_maintenance.htm
+http://www.nzfpm.co.nz/aircraft/p51d.htm
+http://www.wpafb.af.mil/museum/engines/eng33.htm
+
+
+The reference datum for measurements is the nose.
+************************************************************************
+-->
+
+<!-- Weight of everything but fuel  (7010 empty) -->
+<airplane mass="7125">
+
+<!-- Approach configuration -->
+<approach speed="90" aoa="14">
+  <control-setting axis="/controls/engines/engine[0]/throttle" value="0.4"/>
+  <control-setting axis="/controls/engines/engine[0]/mixture" value="0.65"/>
+  <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.8"/>
+  <control-setting axis="/controls/flight/flaps" value="1.0"/>
+  <control-setting axis="/controls/gear/gear-down" value="1"/>
+</approach>
+
+<!-- Cruise configuration -->
+<cruise speed="410" alt="25000">
+  <control-setting axis="/controls/engines/engine[0]/throttle" value="1.00"/>
+  <control-setting axis="/controls/engines/engine[0]/mixture" value="1.00"/>
+  <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+  <control-setting axis="/controls/engines/engine[0]/boost" value="1.0"/>
+  <control-setting axis="/controls/flight/flaps" value="0.0"/>
+  <control-setting axis="/controls/gear/gear-down" value="0"/>
+</cruise>
+
+<!-- pilot's eyepoint -->
+<cockpit x="-4.495" y="0" z="0.689"/>
+
+<fuselage ax="-0.1" ay="0.0" az="0.0" bx="-0.7" by="0.0" bz="0.0"
+          width="0.7" taper="0.2" midpoint="1.0" idrag="0.7"/>
+<fuselage ax="-0.7" ay="0.0" az="0.0" bx="-2.8" by="0.0" bz="-0.1"
+          width="1.3" taper="0.5" midpoint="1.0" idrag="0.7"/>
+<fuselage ax="-2.8" ay="0.0" az="-0.1" bx="-5.8" by="0.0" bz="-0.1"
+          width="1.3" taper="1.0" midpoint="1.0" idrag="0.7"/>
+<fuselage ax="-5.8" ay="0.0" az="-0.1" bx="-9.8" by="0.0" bz="0.1"
+          width="1.3" taper="0.2" midpoint="0.0" cx="2" cz="2" cy="2" idrag="0.7"/>
+
+<fuselage ax="-3.6" ay="0.0" az="0.6" bx="-6.2" by="0.0" bz="0.4"
+          width="0.9" taper="0.3" midpoint="0.3"  cx="2" cz="2" cy="2"  idrag="0.7"/>
+
+<fuselage ax="-4.3" ay="0.0" az="-0.9" bx="-6.8" by="0.0" bz="-0.5"
+          width="0.7" taper="0.5" midpoint="0.3" idrag="0.7"/>
+
+<!--
+stall aoa not available
+flap drag not available
+-->
+<mstab x="-3.96" y="0.55" z="-0.60" taper="0.87" incidence="0.0"
+      length="0.97" chord="2.645" sweep="2.0" dihedral="5" camber="0.13">
+  <stall aoa="14" width="9" peak="1.9"/>
+  <flap0 start="0.024" end="1.0" lift="1.2" drag="2.7"/>
+  <flap1 start="0.024" end="1.0" lift="1.0" drag="6.0"/>
+  <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+  <control-input axis="/position/altitude-ft" control="FLAP1"
+                 src0="0.0" src1="40000.0"
+                 dst0="0.0" dst1="1.0"/>
+  <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+  <control-speed control="FLAP0" transition-time="5"/>
+</mstab>
+
+
+<wing x="-4.012" y="1.521" z="-0.535" taper="0.57" incidence="0.0" twist="-1.25"
+      length="4.125" chord="2.307" sweep="-3.5" dihedral="5" camber="0.13">
+  <stall aoa="14.0" width="11" peak="2.5"/>
+  <flap0 start="0.0" end="0.48" lift="1.4" drag="7.7"/>
+  <flap1 start="0.48" end="1.0" lift="1.7" drag="1.2"/>
+  <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+  <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+  <control-speed control="FLAP0" transition-time="5"/>
+  <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+  <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+</wing>
+
+<hstab x="-8.62" y="0.18" z="0.34" taper="0.55" camber="0.0"
+       length="1.8" chord="1.3" sweep="2.5" >
+  <stall aoa="15" width="8" peak="2.4"/>
+  <flap0 start="0.0" end="1.0" lift="2.6" drag="3.1"/>
+  <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+  <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+  <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+</hstab>
+
+<!-- rudder has to be able to counteract aileron drag -->
+<vstab x="-9.08" y="0" z="-0.05" taper="0.38" camber="0.0"
+       length="1.85" chord="1.8" sweep="10.5"  incidence="-0.58">
+  <stall aoa="15" width="4" peak="2.4"/>
+  <flap0 start="0" end="1" lift="1.5" drag="1.7"/>
+  <control-input axis="/controls/flight/rudder" control="FLAP0" square="true" invert="true"/>
+  <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+  <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"
+    min="1" max="-1"/>
+</vstab>
+
+<!-- moment calculated using formula submitted by Donald Simon:
+      MOI = # of Blades * (8.2*(10^-5))*(D^5), slug-ft^2
+      then converted to kg-m^2 and finally square root to kg-m for torque value -->
+<!-- FIXME: wastegate setting should not apply.  set here so that calculations would approximate.
+      YASim doesn't model gear supercharger.  Have read various figures (turbo-mul) 4.0 to 5.8 for 
+      running the second stage blower.  The second stage should boost at 17000ft. -->
+<!-- cruise-rpm roughly estimated from documented gear ratio of 0.479 -->
+<propeller   x="-0.75" y="0" z="0"
+           radius="1.75" 
+           mass="1690" moment="94.5"
+           cruise-alt="25000" cruise-power="1180"
+           cruise-speed="380" cruise-rpm="1293"
+           gear-ratio="0.479"
+           min-rpm="766" max-rpm="1437" >
+<dir x="1.0" y="0.0" z="0.04"/>
+  <actionpt x="-0.5" y="0" z="0"/>
+  <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE" />
+  <piston-engine
+    eng-power="1695" eng-rpm="3000"
+    turbo-mul="5.75" wastegate-mp="85"
+		turbo-lag="0.1"
+    displacement="1647" compression="6">
+    <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+    <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
+    <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
+    <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+    <control-input axis="/controls/engines/engine[0]/boost" control="BOOST"/>
+  </piston-engine>
+
+</propeller>
+<!--
+<thruster x="-6.528" y="0" z="-0.758" vx="1" vy="0" vz="0" thrust="1000">
+  <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"
+           src0="0" src1="1" dst0="0" dst1="1"/>
+</thruster>
+-->
+
+
+ <!-- left main -->
+<gear x="-2.79" y="1.81" z="-2.20" compression="0.7"
+        spring="1.1"
+        damp="1.4" dfric="0.6" sfric="0.6">
+  <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-speed control="EXTEND" transition-time="6"/>
+  <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+</gear>
+
+ <!-- right main -->
+<gear x="-2.79" y="-1.81" z="-2.20" compression="0.7"
+        spring="1.1"
+        damp="1.4" dfric="0.6" sfric="0.6">
+  <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+  <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+  <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-speed control="EXTEND" transition-time="6"/>
+  <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+</gear>
+
+<!-- Tail wheel -->
+<!-- tail wheel "steerable" in p-51d (in stick back locked position it actually should be limited to 6deg +/-) -->
+<gear x="-7.90" y="0" z="-0.96" compression="0.2" spring="0.8" damp="15.0">
+  <control-input axis="/controls/flight/rudder" control="STEER" square="true" 
+                 src0="-1.0" src1="1.0"
+                 dst0="0.5" dst1="-0.5"/>
+</gear>
+
+<!-- Guess on wing tank positions -->
+<tank x="-3.50" y="1.0" z="-0.61" capacity="726"/> 
+<tank x="-3.50" y="-1.0" z="-0.61" capacity="726"/> 
+<tank x="-6.50" y="0" z="0" capacity="671"/> 
+
+<!-- pilot -->
+<ballast x="-4.495" y="0" z="0.689" mass="180"/>
+
+
+<ballast x="-2.0" y="0" z="0.689" mass="1380"/>
+
+<!-- armament -->
+<!--  Had too much weight I think...disable until stall speed fixed
+<ballast x="-3.20" y="0.7" z="-0.60" mass="800"/> 
+<ballast x="-3.20" y="-0.7" z="-0.60" mass="800"/> 
+-->
+
+<!-- prop -->
+<!--
+<ballast x="0.1" y="0" z="0.0" mass="200"/>
+-->
+
+</airplane>

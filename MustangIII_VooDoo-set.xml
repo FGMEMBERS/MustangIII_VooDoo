@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+P-51C MustangIII_VooDoo simulation config. This files ties together all the components
+used by FGFS to represent the P-51C. Components include the flight data 
+model, instrument panel, and external 3D model.
+
+************************************************************************
+-->   
+
+<PropertyList>
+
+ <sim>
+
+  <description>P-51 MustangIII_VooDoo</description>
+  <author>Vodoun da Vinci, StuartC</author>
+  <status>alpha 1.0c </status>
+  <flight-model>yasim</flight-model>
+  <aero>MustangIII_VooDoo-YASim</aero>
+  <fuel-fraction>1</fuel-fraction>
+
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+  <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+  <sound>
+   <path>Aircraft/MustangIII_VooDoo/Sounds/sound.xml</path>
+  </sound>
+
+<startup>
+   <splash-texture>Aircraft//MustangIII_VooDoo/splash.png</splash-texture>
+</startup>
+
+  <panel>
+  <path>Aircraft/Generic/Panels/generic-vfr-panel.xml</path>
+  <visibility>false</visibility>
+  </panel>
+
+  <model>
+   <path>Aircraft/MustangIII_VooDoo/Models/P51-MustangIII.xml</path>
+  </model> 
+
+  <autopilot>
+        <path>Aircraft/MustangIII_VooDoo/VooDooPropAP1.xml</path>
+  </autopilot>
+
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+    <x-offset-m archive="y" type="double">0.0</x-offset-m>
+    <y-offset-m archive="y" type="double">0.530</y-offset-m>
+    <z-offset-m archive="y" type="double">4.35</z-offset-m>
+    <pitch-offset-deg>-17.5</pitch-offset-deg>
+   </config>
+  </view>
+
+  <view n="1">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="2">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="3">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="4">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="5">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+
+  <view n="6">
+   <config>
+    <target-z-offset-m archive="y" type="double">3.949</target-z-offset-m>
+   </config>
+  </view>
+ 
+  <hud>
+   <enable3d>false</enable3d>
+  </hud>
+  <help>
+    <key>
+      <name>Ctrl-B</name>
+      <desc>toggle engine boost</desc>
+    </key>
+    <line>Maximum Speed: 437 mph</line>
+    <line>Cruise Speed: 363 mph</line>
+    <line>Landing Speed: 100 mph</line>
+    <line>Initial Climb Rate: 3475 feet per minute</line>
+    <line>Sustained Climb Speed: 175 mph</line>
+    <line>Service Ceiling: 41,900 (with 2nd Stage booster)</line>
+    <line>Stall Speed (9000 lbs) Gear/Flaps Up: 102mph</line>
+    <line>Stall Speed (9000 lbs) Gear/Flaps Down: 95mph</line>
+    <text>TAKE OFF___________________________________________________
+Set prop pitch to full increased rpm.
+Start engine with throttle at idle.
+Set BOOST stage one (CTRL-b keybinding cycles through stage 0 (off), 1, and 2).  Default startup for p51-d should have stage one already on.
+Set throttle to 40 inHG Manifold Pressure (MP).
+Be ready to actuate rudder.  When the tail first lifts, the torque will pull the nose to the left.
+After tail lifts off slowing move throttle to full open which with stage 1 booster engaged should be about 61 inHG Manifold Pressure.
+Hang on.  Stay on top of rudder control with small adjustments or you'll do a ground loop.
+Rotate at 150 mph or so.
+
+CLIMB______________________________________________________
+Back off MP to 46 inHG.
+Adjust propeller pitch to 2700 rpm.
+Keep adding throttle as you climb to maintain 46 inHG until you hit full throttle.
+At 18,000 feet turn on second stage (hit CTRL-b) and back off throttle to 46 inHG.
+
+FLYING_____________________________________________________
+Trim and Cruise at about 2400 rpm.
+Do not exceed 2700 rpm sustained.
+Do not exceed 3000 rpm military power (aerobatics)
+Do not exceed 3500 rpm in dives.
+Do not exceed 61 inHG Mainfold Pressure (military power), except 71 inHG for maximum of 7 minutes (war emergency power).  Note that war emergency power is not for flying fast,  rather it is for dogfighting at &lt; 200mph.
+
+LANDING____________________________________________________
+A single long sweeping turn from the downwind leg into a short approach seems to work best.  Make sure you are below 250mph before starting the turn.  Use forward slip as necessary to bleed off speed and altitude at the same time.
+Start applying flaps at 250mph,  gear at 175mph, and full flaps at 165mph or less.
+
+Excessive braking can cause you to nose over.  Some recommend raising flaps immediately after touchdown.
+    </text>
+  </help>
+ </sim>
+<engines>
+  <engine>
+   <rpm type="double">700</rpm>
+   <!-- fake unimplemented settings -->
+   <fuel-pump-psi type="double">18</fuel-pump-psi>
+   <oil-pressure-psi type="double">75</oil-pressure-psi>
+  </engine>
+ </engines>
+
+ <consumables>
+  <fuel>
+   <tank n="0">
+    <level-gal_us>20</level-gal_us>
+   </tank>
+   <tank n="1">
+    <level-gal_us>20</level-gal_us>
+   </tank>
+  </fuel>
+ </consumables>
+
+ <!-- set prop for the manual "bookmark" arrow on the remote compas -->
+ <instrumentation>
+    <magnetic-compass>
+       <bookmark-heading-deg type="double">43.0</bookmark-heading-deg>
+    </magnetic-compass>
+ </instrumentation>
+
+ <!-- set up control properties for YASim...default to first stage boost on -->
+ <controls>
+  <gear>
+      <brake-parking type="double">1.0</brake-parking>
+    </gear>
+   <engines>
+      <engine n="0">
+        <magnetos>3</magnetos>
+        <boost type="double">0.33</boost>
+      </engine>
+   </engines>
+ </controls>
+  
+ <!-- map key for booster (supercharger) -->
+ <input>
+    <keyboard>
+      <key n="2">
+        <name>Ctrl-B</name>
+        <desc>Toggle engine boost.</desc>
+        <binding>
+          <command>property-adjust</command>
+          <property>/controls/engines/engine[0]/boost</property>
+          <step type="double">0.33</step>
+          <min type="double">0.0</min>
+          <max type="double">1.5</max>
+        </binding>
+        <binding>
+          <condition>
+          <greater-than>
+            <property>/controls/engines/engine[0]/boost</property>
+            <value type="double">1.0001</value>
+          </greater-than>
+          </condition>
+          <command>property-assign</command>
+          <property>/controls/engines/engine[0]/boost</property>
+          <value type="double">0.0</value>
+        </binding>
+        <binding> 	 
+          <condition> 	 
+          <greater-than> 	 
+            <property>/controls/engines/engine[0]/boost</property> 	 
+            <value type="double">0.55</value> 	 
+          </greater-than> 	 
+          </condition> 	 
+          <command>property-assign</command> 	 
+          <property>/controls/engines/engine[0]/boost</property> 	 
+          <value type="double">1.0</value> 	 
+        </binding>
+      </key>
+     </keyboard>
+ </input>
+ 
+
+</PropertyList>
+
+
+
+

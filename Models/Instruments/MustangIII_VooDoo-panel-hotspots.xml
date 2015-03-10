@@ -1,0 +1,449 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<!-- This part should be the same for any 3D panel.  Customize the actions section -->
+<PropertyList>
+
+ <name>MustangIII Panel Hotspots</name>
+ <background>Aircraft/MustangIII_VooDoo/Models/transparent-bg.png</background>
+ <w>1024</w>
+ <h>768</h>
+ <y-offset>0</y-offset>
+
+ <instruments>
+  <instrument>
+   <name>Flaps Control</name>
+   <x>512</x>
+   <y>384</y>
+   <w>1024</w>
+   <h>768</h>
+   <w-base>1024</w-base>
+   <h-base>1024</h-base>
+
+
+ <layers>
+  <layer>
+   <name>background</name>
+   <texture>
+<!--
+     <path>Aircraft/p51d/Models/hotspotgrid.rgb</path>
+-->
+     <path>Aircraft/MustangIII_VooDoo/Models/transparent-bg.png</path>
+     <x1>0.0</x1>
+     <y1>0.0</y1>
+     <x2>1.0</x2>
+     <y2>1.0</y2>
+   </texture>
+  </layer>
+ </layers>
+
+<!-- define hotspot actions below -->
+
+ <actions>
+
+  <!-- attitude indicator -->
+  <action>
+   <name></name>
+   <button>0</button>
+   <x>95</x>
+   <y>100</y>
+   <w>60</w>
+   <h>52</h>
+   <binding>
+    <command>property-toggle</command>
+    <property>/instrumentation/attitude-indicator/serviceable</property>
+   </binding>
+  </action>
+
+  <!-- gyro compass hotspots -->
+  <action>
+   <name></name>
+   <button>0</button>
+   <x>-190</x>
+   <y>125</y>
+   <w>20</w>
+   <h>32</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/heading-indicator/offset-deg</property>
+    <step>-1</step>
+    <min>0</min>
+    <max>360</max>
+    <wrap>true</wrap>
+   </binding>
+  </action>
+  
+  <action>
+   <name></name>
+   <button>1</button>
+   <x>-190</x>
+   <y>125</y>
+   <w>20</w>
+   <h>32</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/heading-indicator/offset-deg</property>
+    <step>-5</step>
+    <min>0</min>
+    <max>360</max>
+    <wrap>1</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name></name>
+   <button>0</button>
+   <x>-170</x>
+   <y>125</y>
+   <w>20</w>
+   <h>32</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/heading-indicator/offset-deg</property>
+    <step>1</step>
+    <min>0</min>
+    <max>360</max>
+    <wrap>true</wrap>
+   </binding>
+  </action>
+  
+  <action>
+   <name></name>
+   <button>1</button>
+   <x>-170</x>
+   <y>125</y>
+   <w>20</w>
+   <h>32</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/heading-indicator/offset-deg</property>
+    <step>5</step>
+    <min>0</min>
+    <max>360</max>
+    <wrap>1</wrap>
+   </binding>
+  </action>
+
+  <!-- remote compass hotspots -->
+  <action>
+   <name></name>
+   <button>0</button>
+   <x>-360</x>
+   <y>240</y>
+   <w>20</w>
+   <h>32</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/magnetic-compass/bookmark-heading-deg</property>
+    <step>-1</step>
+    <min>0</min>
+    <max>360</max>
+    <wrap>true</wrap>
+   </binding>
+  </action>
+  
+  <action>
+   <name></name>
+   <button>1</button>
+   <x>-360</x>
+   <y>240</y>
+   <w>20</w>
+   <h>32</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/magnetic-compass/bookmark-heading-deg</property>
+    <step>-5</step>
+    <min>0</min>
+    <max>360</max>
+    <wrap>1</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name></name>
+   <button>0</button>
+   <x>-340</x>
+   <y>240</y>
+   <w>20</w>
+   <h>32</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/magnetic-compass/bookmark-heading-deg</property>
+    <step>1</step>
+    <min>0</min>
+    <max>360</max>
+    <wrap>true</wrap>
+   </binding>
+  </action>
+  
+  <action>
+   <name></name>
+   <button>1</button>
+   <x>-340</x>
+   <y>240</y>
+   <w>20</w>
+   <h>32</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/magnetic-compass/bookmark-heading-deg</property>
+    <step>5</step>
+    <min>0</min>
+    <max>360</max>
+    <wrap>1</wrap>
+   </binding>
+  </action>
+
+  <!-- altimeter hotspots -->
+  <action>
+   <name>calibrate fine</name>
+   <button>0</button>
+   <x>-436</x>
+   <y>10</y>
+   <w>20</w>
+   <h>36</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>-0.01</step>
+    <min>26.0</min>
+    <max>33.0</max>
+    <wrap>false</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>calibrate coarse</name>
+   <button>1</button>
+   <x>-436</x>
+   <y>10</y>
+   <w>20</w>
+   <h>36</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>-0.1</step>
+    <min>26.0</min>
+    <max>33.0</max>
+    <wrap>false</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>calibrate fine</name>
+   <button>0</button>
+   <x>-416</x>
+   <y>10</y>
+   <w>20</w>
+   <h>36</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>0.01</step>
+    <min>26.0</min>
+    <max>33.0</max>
+    <wrap>false</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>calibrate coarse</name>
+   <button>1</button>
+   <x>-416</x>
+   <y>10</y>
+   <w>20</w>
+   <h>36</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/altimeter/setting-inhg</property>
+    <step>0.1</step>
+    <min>26.0</min>
+    <max>33.0</max>
+    <wrap>false</wrap>
+   </binding>
+  </action>
+
+  <!-- ingition switch hotspots -->
+  <action>
+   <name>switch up</name>
+   <button>0</button>
+   <x>-254</x>
+   <y>-230</y>
+   <w>64</w>
+   <h>81</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[0]/magnetos</property>
+    <step>1</step>
+    <min>0</min>
+    <max>3</max>
+    <wrap>0</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>switch down</name>
+   <button>0</button>
+   <x>-190</x>
+   <y>-230</y>
+   <w>64</w>
+   <h>81</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/controls/engines/engine[0]/magnetos</property>
+    <step>-1</step>
+    <min>0</min>
+    <max>3</max>
+    <wrap>0</wrap>
+   </binding>
+  </action>
+
+  <!--  cockpit light dimmer hotspots -->
+  <action>
+   <name>panel brighter</name>
+   <button>0</button>
+   <x>164</x>
+   <y>-180</y>
+   <w>64</w>
+   <h>81</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/controls[0]/lighting[0]/instruments-norm</property>
+    <step>0.1</step>
+    <min>0</min>
+    <max>1</max>
+    <wrap>0</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>panel darker</name>
+   <button>0</button>
+   <x>100</x>
+   <y>-180</y>
+   <w>64</w>
+   <h>81</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/controls[0]/lighting[0]/instruments-norm</property>
+    <step>-0.1</step>
+    <min>0</min>
+    <max>1</max>
+    <wrap>0</wrap>
+   </binding>
+  </action>
+
+  <!-- clock hotspots -->
+  <action>
+   <name>adjust left fine</name>
+   <button>0</button>
+   <x>-203</x>
+   <y>258</y>
+   <w>20</w>
+   <h>32</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/clock/offset-sec</property>
+    <step>-60</step>
+    <min>0</min>
+    <max>43200</max>
+    <wrap>true</wrap>
+   </binding>
+  </action>
+  
+  <action>
+   <name>adjust left coarse</name>
+   <button>1</button>
+   <x>-203</x>
+   <y>258</y>
+   <w>20</w>
+   <h>32</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/clock/offset-sec</property>
+    <step>-900</step>
+    <min>0</min>
+    <max>43200</max>
+    <wrap>1</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>adjust right fine</name>
+   <button>0</button>
+   <x>-183</x>
+   <y>258</y>
+   <w>20</w>
+   <h>32</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/clock/offset-sec</property>
+    <step>60</step>
+    <min>0</min>
+    <max>43200</max>
+    <wrap>true</wrap>
+   </binding>
+  </action>
+  
+  <action>
+   <name>adjust right coarse</name>
+   <button>1</button>
+   <x>-183</x>
+   <y>258</y>
+   <w>20</w>
+   <h>32</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/instrumentation/clock/offset-sec</property>
+    <step>900</step>
+    <min>0</min>
+    <max>43200</max>
+    <wrap>1</wrap>
+   </binding>
+  </action>
+
+  <!-- flaps control -->
+<!--
+  <action>
+   <name>extend</name>
+   <button>0</button>
+   <x>-384</x>
+   <y>-384</y>
+   <w>30</w>
+   <h>96</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/controls/flight/flaps</property>
+    <step>-0.34</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>retract</name>
+   <button>0</button>
+   <x>-320</x>
+   <y>-384</y>
+   <w>30</w>
+   <h>96</h>
+   <binding>
+    <command>property-adjust</command>
+    <property>/controls/flight/flaps</property>
+    <step>0.34</step>
+    <min>0.0</min>
+    <max>1.0</max>
+    <wrap>false</wrap>
+   </binding>
+  </action>
+-->
+ </actions>
+
+  </instrument>
+
+ </instruments>
+
+</PropertyList>
+
+
+
